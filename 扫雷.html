@@ -1,48 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-        <style>
-            * {
-                padding: 0;
-                margin: 0;
-                box-sizing: border-box;
-            }
-            .box {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 20px auto;
-                width: 500px;
-                height: 600px;
-                background-color: aqua;
-            }
-            .box1{
-                position: relative;
-                width: 20px;
-                height: 20px;
-                border: 1px solid black;
-            }
-            .box1 p{
-                position: absolute;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: blueviolet;
-            }
-        </style>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: flex;
+            /* justify-content: center; */
+            flex-wrap: wrap;
+            max-width: 200px;
+            align-items: center;
+            margin: 20px auto;
+           
+            background-color: aqua;
+        }
+
+        .box1 {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+        }
+
+        .box1 p {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: blueviolet;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="box">
-        <div class="box1">d
+    <button class="btn1">简单</button>
+    <div class="main">
+        <div class="box">
+            <!-- <div class="box1">d
             <p></p>
+        </div> -->
         </div>
     </div>
+
     <script>
-        
+        let btn1 = document.querySelector('.btn1')
+        let box = document.querySelector('.box')
+        let easy = ''
+        btn1.addEventListener('click', function () {
+            for (let i = 0; i < 100; i++) {
+
+                easy += `<div class="box1">
+                    <p></p>
+                </div>`
+
+            }
+            box.innerHTML = easy
+            
+        })
+
     </script>
 </body>
+
 </html>
